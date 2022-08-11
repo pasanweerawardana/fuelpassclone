@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="271.0" prefWidth="552.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashScreenFormCtroller">
+   <children>
+      <AnchorPane layoutY="57.0" prefHeight="244.0" prefWidth="552.0" style="-fx-background-color: white;">
+         <children>
+            <Circle fill="WHITE" layoutX="112.0" layoutY="59.0" radius="102.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <ImageView fitHeight="43.0" fitWidth="217.0" layoutX="58.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="106.0" layoutX="64.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/gas-pump.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="64.0" layoutX="456.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ioc.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="384.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ceypetco.png" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="pgbContainer" fill="DODGERBLUE" height="8.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="552.0" />
+            <Label layoutX="208.0" layoutY="50.0" text="National Fuel Pass App">
+               <font>
+                  <Font name="Carlito Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="78.0" text="v 0.1.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStatus" layoutX="207.0" layoutY="98.0" text="Welcome to National Fuel Pass App......!">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="pgbLoad" arcHeight="5.0" arcWidth="5.0" fill="#06ab25" height="8.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
