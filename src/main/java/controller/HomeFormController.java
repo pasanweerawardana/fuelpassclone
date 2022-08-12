@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -43,5 +45,11 @@ public class HomeFormController {
     public void imgLogoOnMouseClicked(MouseEvent mouseEvent) throws IOException {
         pneContainer.getChildren().clear();
         initialize();
+    }
+
+    public void pneLogInOnKeyRelease(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER || keyEvent.getCode() == KeyCode.SPACE){
+            pneLogInOnMouseClicked(null);
+        }
     }
 }
