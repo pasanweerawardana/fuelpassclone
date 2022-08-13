@@ -1,8 +1,8 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class AdminLoginFormController {
+    private static int attempts=3;
 
     public PasswordField txtPassword;
 
@@ -19,11 +20,19 @@ public class AdminLoginFormController {
 
     public void txtPasswordOnAction(ActionEvent actionEvent) throws IOException {
         if (!txtPassword.getText().equals(ADMIN_PASSWORD)){
-            new Alert(Alert.AlertType.ERROR,"Wrong PASSWORD").showAndWait();
+
+            if (attempts==0){
+                Platform.exit();
+                return;
+            }
+
+            new Alert(Alert.AlertType.ERROR,"Wrong PASSWORD "+ attempts+" more attempts remaining ").showAndWait();
+            attempts--;
             txtPassword.requestFocus();
+            txtPassword.clear();
             return;
         }
-        URL resource = this.getClass().getResource("/view/ControlCemterForm.fxml");
+        URL resource = this.getClass().getResource("/view/ControlCenterForm.fxml");
         AnchorPane controlCenter = FXMLLoader.load(resource);
         AnchorPane pneContainer = (AnchorPane) pneAdminLogIn.getParent();
         pneContainer.getChildren().clear();
